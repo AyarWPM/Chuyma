@@ -6,14 +6,17 @@ class Elemento:
     '''Esta es la clase de los elementos, fenómenos o eventos lógicos
     e y anti-e por ejemplo.'''
 
-    def __init__(self, nombre, abrev):
+    def __init__(self, nombre, abrev, descripcion=""):
         '''Por defecto el estado de una nueva instancia es Actual. i.e.
         Contradicción potencial y no-contradicción actual (estadoC: falso)
         y por otro lado Actualización (estadoR verdadero)'''
         self.nombre = nombre
         self.abrev = abrev
-        self.estadoC = False
-        self.estadoR = True
+        self.descripcion = descripcion
+        self.estadoC = None
+        self.estadoR = None
+        self.orientacion = None
+        self.padre = None
 
     def esActual(self):
         self.estadoC = False
@@ -26,24 +29,23 @@ class Elemento:
     def esTercero(self):
         self.estadoC = True
 
-    def cambiarEstado(self, nuevoEstado):
-        if nuevoEstado == "A":
-            self.esActual()
-        if nuevoEstado == "P":
-            self.esPotencial()
-        if nuevoEstado == "T":
-            self.esTercero()
+    def relaciona(self, el1, el2, dedu):
+        if dedu == 1:
+            el1.esActual()
+            el2.esPotencial()
+            self.orden(el1, el2)
+            self.orientacion = dedu
+        elif dedu == -1:
+            el1.esPotencial()
+            el2.esActual()
+            self.orden(el2, el1)
+            self.orientacion = dedu
+        elif dedu == 0:
+            el1.esTercero()
+            el2.esTercero()
+            self.orden(el1, el2)
+            self.orientacion = dedu
 
-    def infoElemento(self):
-        return [self.nombre, self.abrev, [self.estadoC, self.estadoR]]
-
-    def imprimirEstado(self):
-        """Esta función es provisoria, solo para propósitos de debugging...
-        la función imprimir será retrabajada."""
-        if self.estadoC is True:
-            print self.abrev + "(T)"
-        else:
-            if self.estadoR is True:
-                print self.abrev + "(A)"
-            else:
-                print self.abrev + "(P)"
+    def orden(self, antecedente, consecuente):
+        self.antecedente = antecedente
+        self.consecuente = consecuente
