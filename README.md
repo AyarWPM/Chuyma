@@ -1,10 +1,7 @@
 # Chuyma
-Programa para diseñar tablas de deducciones de la lógica de lo contradictorio.
 
-La lógica de lo contradictorio fue descubierta por Stéphane Lupasco a mediados del siglo XX. Pasó desapercibida en los medios académicos y científicos ya que la lógica de lo no-contradictorio conocía un auge desde comienzos del siglo XX y no parecía necesario cuestionar la absolutividad del principio de no-contradicción. Incluso las ciencias occidentales pudieron interpretar el descubrimiento de la física cuántica como una no-contradicción, a pesar de que se trataba de una contradicción propiamente dicho: la equivalencia enter partícula y onda.
+Chuyma es un programa en curso de elaboración para diseñar tablas de deducciones de la lógica de lo contradictorio.
 
-Parece ser entonces que las ciencias exactas, sobre todo la física, han salvaguardado aquella lógica que funda las matemáticas. ¿Pero que sucede en las ciencias humanas? ¿No se evidencian cada vez más contradicciones en nuestras sociedades del mundo entero? ¿Será que la lógica clásica de no-contradicción nos permite comprender y racionalizar todas esas contradicciones que se nos presentan?
+El proyecto en su totalidad está albergado en github: el código fuente y su documentación (https://github.com/AyarWPM/Chuyma/wiki).
 
-Un pequeño grupo de investigadores de las ciencias sociales (economía, antropología, filosofía, sociología, arqueología, comunicación, ) dispersos en el mundo entero apuestan sobre la necesidad de replantear los supuestos epistemológicos, entre los cuales el más fundamental es la lógica, con el fin de comprender lo que está realmente sucediendo en el mundo.
-
-'Chuyma' es un aporte a este cambio epistemológico. 'Chuyma' es un concepto Aymara que significa 'pulmón' o 'corazón', es la fuente de la energía del ser humano, es de ahí que surge la humanidad de cada persona. De manera metafórica 'Chuyma' es el corazón de un 'sistema hipotético-deductivo' informatizado, es el kernel que permite crear tablas de deducciones, es decir nociones, elementos, eventos lógicos o fenómenos ordenados en niveles deductivos, de tal manera que sea posible desarrollar otros programas con fines más específicos, por ej. un programa que acompañe la investigación de la reciprocidad antropológica.
+Contacto: ayarWPM [arroba] protonmail [punto] com
