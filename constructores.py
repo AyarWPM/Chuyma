@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-
 import copy
 import elementos
+import ecuaciones
 
 
 class Contador:
@@ -15,9 +15,9 @@ diccElem = {}
 contador = Contador()
 
 
-def nuevoElem():
+def nuevoElem(nombre, abrev, desc):
     diccElem["elemento" + str(contador.cuenta())] =\
-    elementos.Elemento("Nuevo nombre", "Nueva abreviación")
+    elementos.Elemento(nombre, abrev, desc)
     return diccElem["elemento" +
     str(getattr(contador, "_Contador__cuentaPrivada"))]
 
@@ -35,39 +35,24 @@ def crearAnti(elem):
 
 def nuevaImpli(elem, antiElem, orientacion):
     diccElem["elemento" + str(contador.cuenta())] =\
-    elementos.Elemento("Nuevo nombre", "Nueva abreviación")
-    if orientacion == 1:
-        diccElem["elemento" +
-        str(getattr(contador, "_Contador__cuentaPrivada"))].\
-        relaciona(elem, antiElem, orientacion)
-    elif orientacion == -1:
-        diccElem["elemento" +
-        str(getattr(contador, "_Contador__cuentaPrivada"))].\
-        relaciona(antiElem, elem, orientacion)
-    elif orientacion == 0:
-        diccElem["elemento" +
-        str(getattr(contador, "_Contador__cuentaPrivada"))].\
-        relaciona(elem, antiElem, orientacion)
+    elementos.Elemento("Nuevo elemento " +
+    str(getattr(contador, "_Contador__cuentaPrivada") + 1),
+    "X", "Descripcion vacia.")
+    diccElem["elemento" +
+    str(getattr(contador, "_Contador__cuentaPrivada"))].\
+    relaciona(elem, antiElem, orientacion)
+
+    ecuaciones.nuevaEcuacion("elemento" +
+    str(getattr(contador, "_Contador__cuentaPrivada")), laLlave(elem))
+
     return diccElem["elemento" +
     str(getattr(contador, "_Contador__cuentaPrivada"))]
 
 
 def nuevaRama(impliPura):
-    for i in [1, -1, 0]:
-        diccElem["elemento" + str(contador.cuenta())] = copy.copy(impliPura)
-        tempCuenta = getattr(contador, "_Contador__cuentaPrivada")
-        setattr(diccElem["elemento" + str(tempCuenta)], "orientacion", i)
-        setattr(diccElem["elemento" + str(tempCuenta)], "padre", impliPura)
-        crearAnti(diccElem["elemento" + str(tempCuenta)])
-        if i == 1:
-            nuevaImpli(diccElem["elemento" + str(tempCuenta)],
-            diccElem["elemento" + str(tempCuenta + 1)], i)
-        elif i == -1:
-            nuevaImpli(diccElem["elemento" + str(tempCuenta + 1)],
-            diccElem["elemento" + str(tempCuenta)], i)
-        elif i == 0:
-            nuevaImpli(diccElem["elemento" + str(tempCuenta)],
-            diccElem["elemento" + str(tempCuenta + 1)], i)
+    antiImpliPura = crearAnti(impliPura)
+    for i in [1, 0, -1]:
+        nuevaImpli(impliPura, antiImpliPura, i)
 
 
 def corregirEstado(el1, el2):
@@ -79,3 +64,9 @@ def corregirEstado(el1, el2):
             el2.esPotencial()
         if (el1.estadoR is False) and (el2.estadoR is False):
             el2.esActual()
+
+
+def laLlave(objElemento):
+    for z in diccElem:
+        if diccElem[z] == objElemento:
+            return z

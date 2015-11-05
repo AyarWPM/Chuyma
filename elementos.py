@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-#textoUnicode = u'\u0305\u2283'
 
 
 class Elemento:
@@ -16,7 +15,9 @@ class Elemento:
         self.estadoC = None
         self.estadoR = None
         self.orientacion = None
-        self.padre = None
+        self.antecedente = None
+        self.consecuente = None
+        #self.camino = None
 
     def esActual(self):
         self.estadoC = False
