@@ -1,5 +1,5 @@
 #Chuyma
-![Chuyma](https://sourceforge.net/projects/chuyma/files/logo.png?raw=true)
+![Chuyma](https://sourceforge.net/projects/chuyma/files/logo.png)
 
 Chuyma es un programa que genera Tablas de deducciones de la lógica de lo contradictorio.
 
@@ -33,8 +33,6 @@ Para el desarrollo del código fuente he utilizado tres módulos de python adem�
 
 Para el logo he utilizado el emblema del famoso Chapulín Colorado albergado en wikimedia: https://commons.wikimedia.org/wiki/File:El_Chapul%C3%ADn_Colorado_logo.svg
 
-CONTACTO Y SUGERENCIAS
+SOBRE EL AUTOR
 ======================
-Contacto: ayarWPM@protonmail.com
-
-
+El autor es Ayar WPM, un economista que trabaja sobre temas relacionados a la lógica formal empleada en los razonamientos económicos y la formalización de la economía de reciprocidad. Contacto: ayarWPM@protonmail.com
