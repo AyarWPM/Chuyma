@@ -12,7 +12,7 @@ El programa se ejecuta sin instalación ya que se trata de un simple script. Los
 
 [Descargar la última version para Linux (V.1.0.1)](http://sourceforge.net/projects/chuyma/files/Linux/chuyma_v.1.0.1/download)
 
-Los usuarios de Mac OS pueden ejecutar directamente el código fuente, ver abajo.
+Lo siento pero no he generado los binarios para Mac OS. Los usuarios de Mac OS pueden ejecutar directamente el código fuente, ver abajo.
 
 ##Ejecución desde la fuente
 El código fuente que se encuentra en el repositorio de github (https://github.com/AyarWPM/Chuyma/) ha sido desarrollado con python v.2.7.9. Para "ejecutarlo" necesita tener instalado:
