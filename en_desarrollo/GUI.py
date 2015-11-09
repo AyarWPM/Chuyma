@@ -39,7 +39,7 @@ DATOS DEL PROGRAMA\n\
 ==================\n\
 Nombre: Chuyma\n\
 Autor: Ayar WPM\n\
-Version: 1.0\n\
+Version: 1.0.1\n\
 Código fuente: https://github.com/AyarWPM/Chuyma/\n\
 Documentacion: https://github.com/AyarWPM/Chuyma/wiki"
     ttl = "Chuyma - Generador de tablas de deducciones"
@@ -50,8 +50,7 @@ Documentacion: https://github.com/AyarWPM/Chuyma/wiki"
 def abrir():
     msj = "Indicar la ubicación del archivo"
     ttl = "Abrir archivo"
-    #directorio = os.getcwd() + "/*.chuyma"
-    directorio = "reciprocidad.chuyma"
+    directorio = os.getcwd() + "/*.chuyma"
     direccion = enterbox(msj, ttl, directorio)
     try:
         if direccion:
@@ -85,7 +84,17 @@ En la siguiente ventana se le pedirá ingresar el nombre de este elemento, \
 una abreviación (máximo 3 carácteres) y una descripción de dicho elemento. Por \
 favor no utilizar acentos ni la letra ñ, el programa explotaría.",
         "Inicialización de una nueva Tabla")
-    crearElementos()
+    if "elemento1" in constructores.diccElem:
+        msgbox("Ya ha definido un primer elemento. Se le dirigirá al paso 2. \
+Si desea anular la creación de aquel elemento cierre el programa y ábralo \
+nuevamente.")
+        pass
+    else:
+        if crearElementos():
+            print "Si ingresé datos"
+            pass
+        else:
+            return
     msgbox("Paso 2 de 2\n===========\n\n\
 A todo elemento, fenómeno o evento lógico le debe estar siempre \
 asociado un anti-elemento, anti-fenómeno o anti-evento lógico de tal manera \
@@ -94,7 +103,10 @@ contradictorio.\n\n\
 En la siguiente ventana se le pedirá definir este anti-elemento. Por \
 favor no utilizar acentos ni la letra ñ, el programa explotaría.",
         "Inicialización de una nueva Tabla")
-    crearElementos()
+    if crearElementos():
+        pass
+    else:
+        return
     primerNivel()
     msgbox("Felicidades!\n===========\n\n\
 El primer elemento creado ha sido asociado según el Principio de Antagonismo \
@@ -180,7 +192,7 @@ def crearElementos():
             break
         resp = multenterbox(msjErr, ttl1, campos, resp)
     if resp:
-        constructores.nuevoElem(resp[0], resp[1], resp[2])
+        return constructores.nuevoElem(resp[0], resp[1], resp[2])
 
 
 def mostrarElementos():
@@ -193,13 +205,16 @@ def mostrarElementos():
             msj = detallesElem(seleccion1)
             ttl = 'Detalles de "' +\
             constructores.diccElem[seleccion1].nombre + '"'
-            opciones = ["Modificar", "Generar ramificacion", "Regresar"]
+            opciones = ["Modificar", "Registrar observacion\nestadistica",
+                "Generar ramificacion", "Regresar"]
             seleccion2 = indexbox(msj, ttl, opciones)
             if seleccion2 == 0:
                 modificarElemento(seleccion1)
             if seleccion2 == 1:
-                generarRama(seleccion1)
+                registrarObservacion()
             if seleccion2 == 2:
+                generarRama(seleccion1)
+            if seleccion2 == 3:
                 pass
         if seleccion1 is None:
             return
@@ -353,3 +368,13 @@ def detallesElem(codElem):
             detalles += str(x) + ": " +\
             str(constructores.diccElem[codElem].__dict__[x]) + "\n"
     return detalles
+
+
+def registrarObservacion():
+    ttl = "Ventana para registrar observaciones estadísticas."
+    msj = "Esta ventana es un demostración de cómo se utilizará el programa \
+para registrar datos."
+    campos = ["Configuracion espacial (¿donde?): ", "Configuracion temporal \
+(¿cuando?", "Criterio positivo 1: ", "Criterio negativo 1: ", "Valoracion \
+de criterio 1: ", "Criterio positivo 2: ", "etc."]
+    return multenterbox(msj, ttl, campos)
