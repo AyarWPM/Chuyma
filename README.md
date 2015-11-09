@@ -1,5 +1,5 @@
 #Chuyma
-![Chuyma](https://sourceforge.net/projects/chuyma/files/logo.png)
+![Chuyma](https://github.com/AyarWPM/Chuyma/blob/master/logo.png)
 
 Chuyma es un programa que genera Tablas de deducciones de la lógica de lo contradictorio.
 
