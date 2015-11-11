@@ -8,9 +8,9 @@ Chuyma es un programa que genera Tablas de deducciones de la lógica de lo contr
 ##Windows y linux
 El programa se ejecuta sin instalación ya que se trata de un simple script. Los binarios para Windows y Linux se encuentran en sourceforge: http://chuyma.sourceforge.net/
 
-[Descargar la última version para Windows (V.1.0.1)](http://sourceforge.net/projects/chuyma/files/Windows/chuyma_v.1.0.1.exe/download)
+[Descargar la última version para Windows (V.1.0.2)](http://sourceforge.net/projects/chuyma/files/Windows/chuyma_v.1.0.2.exe/download)
 
-[Descargar la última version para Linux (V.1.0.1)](http://sourceforge.net/projects/chuyma/files/Linux/chuyma_v.1.0.1/download)
+[Descargar la última version para Linux (V.1.0.2)](http://sourceforge.net/projects/chuyma/files/Linux/chuyma_v.1.0.2/download)
 
 Lo siento pero no he generado los binarios para Mac OS. Los usuarios de Mac OS pueden ejecutar directamente el código fuente, ver abajo.
 
