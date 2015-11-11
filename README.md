@@ -36,6 +36,9 @@ Actualmente el proyecto Chuyma está construido con una interfaz gráfica simple
 
 #NOVEDADES
 
+##VERSION 1.0.2 (11/11/2015)
+En la impresión de la Tabla de deducciones se utilizan subíndices a, p y t (y ya no _A, _P, _T).
+
 ##VERSION 1.0.1 (9/11/2015)
 Corrección de bugs.
 
