@@ -34,6 +34,9 @@ El programa permite definir eventos lógicos en el sentido de la lógica de Sté
 
 Actualmente el proyecto Chuyma está construido con una interfaz gráfica simple únicamene con el objetivo de demostrar de que manera puede utilizarse la generación de Tablas de deducciones. Por ejemplo un proyect posterior será el de aplicar el código generador de estas tablas a un programa específico para dinamizar una economía de reciprocidad.
 
+#DOCUMENTACIÓN
+Toda la documentación relativa al funcionamiento del programa y a su fundamento teórico se encuentra albergado en esta dirección: [http://www.transbordered.cf](http://www.transbordered.cf)
+
 #NOVEDADES
 
 ##VERSION 1.0.2 (11/11/2015)
