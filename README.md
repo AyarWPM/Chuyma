@@ -3,6 +3,9 @@
 
 Chuyma es un programa que genera Tablas de deducciones de la lógica de lo contradictorio.
 
+31/01/2017
+¡Atención! Este proyecto ha sido rebautizado Amuyaña porque he reescrito completamente el programa en java y cambiado la lógica de las clases.
+
 #INSTALACIÓN
 
 ##Windows y linux
